@@ -1,6 +1,9 @@
 import React from 'react';
-import { PurpleBox } from './PurpleBox';
+
+import './TitleBox.css';
 
 export default function TitleBox() {
-    return <PurpleBox>Momentum</PurpleBox>;
+    return <div className='titlebox'>
+        Momentum
+    </div>;
 }

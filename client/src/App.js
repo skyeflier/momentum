@@ -1,10 +1,16 @@
 import './App.css';
 
+import TopBar from './components/TopBar/Index';
+import TitleBox from './components/TitleBox/Index';
+import HowItWorks from './components/HowItWorks/Index';
+
 function App() {
   return (
-    <div className="App">
-      <h1>React App</h1>
-    </div>
+    <>
+      <TopBar />
+      <TitleBox />
+      <HowItWorks />
+    </>
   );
 }
 
