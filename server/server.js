@@ -1,10 +1,10 @@
 const express = require('express');
 const db = require('./config/connection')
-const PORT = process.env.port || 3000;
+const PORT = process.env.port || 3001;
 const app = express();
 
 // Require model 
-const { User } = require('./models');
+const user = require('./models/User')
 
 // Set up home page
 app.get('/', (req, res) => {
@@ -17,7 +17,7 @@ app.use(express.json());
 
 // Creates a new user
 app.post('/new-user/:user', (req, res) => {
-    const newUser = new User({ name: req.params.user });
+    const newUser = new user({ name: req.params.user });
     newUser.save();
     if (newUser) {
         res.status(201).json(newUser);
@@ -31,7 +31,7 @@ app.post('/new-user/:user', (req, res) => {
 app.get('/all-users', async (req, res) => {
     try {
         // Using model in route to find all documents that are instances of that model
-        const result = await User.find({});
+        const result = await user.find({});
         res.status(200).json(result);
     } catch (err) {
         console.log('Uh Oh, something went wrong');
@@ -43,7 +43,7 @@ app.get('/all-users', async (req, res) => {
 app.get('/find-user', async (req, res) => {
     try {
         // Using model in route to find all documents that are instances of that model
-        const result = await User.findOne({ name: 'Wine' });
+        const result = await user.findOne({ name: 'Wine' });
         res.status(200).json(result);
     } catch (err) {
         console.log('Uh Oh, something went wrong');
@@ -55,7 +55,7 @@ app.get('/find-user', async (req, res) => {
 // For demo, use 'Wine' as URL param
 app.delete('/find-one-delete/:userName', async (req, res) => {
     try {
-        const result = await User.findOneAndDelete({ name: req.params.user });
+        const result = await user.findOneAndDelete({ name: req.params.user });
         res.status(200).json(result);
         console.log(`Deleted: ${result}`);
     } catch (err) {
