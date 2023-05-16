@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const userInfo = new UserInputError(
+const userSchema = new Schema(
     {
         firstName: {
             type: String,
@@ -12,7 +12,14 @@ const userInfo = new UserInputError(
             required: true,
         },
         email: {
-
+            type: String,
+            required: true,
+            unique: true,
+            match: [/.+@.+\..+/, 'Must match an email address!'],
         }
     }
 );
+
+const User = model('User', userSchema);
+
+module.exports = User;
