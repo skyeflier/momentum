@@ -1,6 +1,21 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+type Subscription {
+    _id: ID
+    name: String
+    description: String
+    image: String
+    quantity: Int
+    price: Float
+  }
+
+  type Order {
+    _id: ID
+    purchaseDate: String
+    subscriptions: [Subscription]
+  }
+
   type user {
     _id: ID
     name: String
@@ -9,22 +24,37 @@ const typeDefs = gql`
     password: String
   }
 
+  type Checkout {
+    session: ID
+  }
+
   # Set up an Auth type to handle returning data from a user creating or user login
   type Auth {
     token: ID!
     user: User
   }
 
-  type Query {
-    users: [User]!
-    user(userId: ID!): User
+   type Query {
+    subscriptions(name: String): [Subscription]
+    subscription(_id: ID!): Subscription
+    user: User
+    order(_id: ID!): Order
+    checkout(subscriptions: [ID]!): Checkout
   }
 
   type Mutation {
-    # Set up mutations to handle creating a user or logging into a user and return Auth type
-    addUser(name: String!, email: String!, password: String!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addOrder(subscriptions: [ID]!): Order
+    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    updateSubscription(_id: ID!, quantity: Int!): Subscription
     login(email: String!, password: String!): Auth
   }
 `;
+
+// UNSURE IF I NEED THIS?
+//   type Query {
+//     users: [User]!
+//     user(userId: ID!): User
+//   }
 
 module.exports = typeDefs;
