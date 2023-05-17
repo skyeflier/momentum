@@ -7,7 +7,7 @@ export default function Body(props) {
     return (
         <div className='page-body'>
             <div className='page-body__content container'>
-                <p>
+                <p className='page-body__description'>
                     Join our community of dedicated moms who prioritize their well-being
                     and fitness. Take the first step towards achieving your fitness goals
                     today!

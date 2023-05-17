@@ -6,7 +6,7 @@ import Step from './Step/Index';
 const steps = [
     {
         title: 'Step 1',
-        description: 'This is step 1 description',
+        description: 'Begin by signing up and taking our questionnaire. This quiz will allow us to know what workout materials you’d want to receive a month',
     },
     {
         title: 'Step 2',

@@ -2,12 +2,23 @@
     padding: 10px 15px;
     border-radius: 5px;
     background-color: antiquewhite;
+    background-color: #b18ac1;
+    transition: all 0.4s;
+    cursor: pointer;
+    overflow: hidden;
+
 }
 
 .step__title {}
 
 .step__body {
     margin-top: 15px;
+    text-align: center;
+}
+
+.step:hover {
+
+    transform: scale(105%);
 }
 
 .step__description {}
