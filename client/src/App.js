@@ -3,6 +3,8 @@ import './App.css';
 import TopBar from './components/TopBar/Index';
 import TitleBox from './components/TitleBox/Index';
 import HowItWorks from './components/HowItWorks/Index';
+// import Register from './components/Register/Index';
+
 
 function App() {
   return (
@@ -10,6 +12,7 @@ function App() {
       <TopBar />
       <TitleBox />
       <HowItWorks />
+      {/* <Register /> */}
     </>
   );
 }
