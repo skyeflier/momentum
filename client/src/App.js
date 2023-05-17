@@ -1,22 +1,12 @@
 import './App.css';
 
-import TopBar from './components/TopBar/Index';
-import TitleBox from './components/TitleBox/Index';
-import HowItWorks from './components/HowItWorks/Index';
-import PaymentPlan from './components/PaymentPlan/Index';
-// import Register from './components/Register/Index';
+import Home from './components/pages/Home.js';
 
-
+import { Routes, Route } from 'react-router-dom';
 function App() {
-  return (
-    <>
-      <TopBar />
-      <TitleBox />
-      <HowItWorks />
-      <PaymentPlan />
-      {/* <Register /> */}
-    </>
-  );
+  return <>
+    <Home />
+  </>
 }
 
 export default App;
