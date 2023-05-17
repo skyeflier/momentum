@@ -10,10 +10,10 @@ import Login from '../Login/Index';
 import Register from '../Register/Index';
 import Checkout from './Checkout';
 
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [openModal, setOpenModal] = useState(false);
     const [openRegister, setOpenRegister] = useState(false);
     const [openLogin, setOpenLogin] = useState(false);

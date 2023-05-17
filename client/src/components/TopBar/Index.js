@@ -11,16 +11,25 @@ const Index = (props) => {
         }
     };
 
-    if (props.user) {
-        return <></>;
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+
+        localStorage.clear()
+
+
+        window.location.reload()
+
     }
+
+
 
     return (
         <header className='topbar'>
             <nav className='topbar__nav'>
                 <h6 className='fake-brand'>fake brand</h6>
                 <ul className='topbar__nav-list'>
-                    <li className='topbar__item'>
+                    {!props.user && <li className='topbar__item'>
                         <a
                             href='/login'
                             className='topbar__link login'
@@ -28,8 +37,10 @@ const Index = (props) => {
                         >
                             Login
                         </a>
-                    </li>
-                    <li className='topbar__item'>
+                    </li>}
+
+
+                    {!props.user && <li className='topbar__item'>
                         <a
                             href='/register'
                             className='topbar__link register'
@@ -37,7 +48,18 @@ const Index = (props) => {
                         >
                             Register
                         </a>
-                    </li>
+                    </li>}
+
+
+                    {props.user && <li className='topbar__item'>
+                        <a
+                            href='/login'
+                            className='topbar__link login'
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </a>
+                    </li>}
                 </ul>
             </nav>
         </header>

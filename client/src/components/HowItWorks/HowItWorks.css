@@ -1,8 +1,16 @@
-.how-it-works {}
+.how-it-works {
+    margin-top: 100px;
+}
+
+.how-it-works h2 {
+    text-align: center;
+}
 
 .how-it-works__body {
+    width: 650px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 44px;
     justify-content: space-between;
 }
