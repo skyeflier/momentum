@@ -16,7 +16,7 @@ type Subscription {
     subscriptions: [Subscription]
   }
 
-  type user {
+  type User {
     _id: ID
     name: String
     email: String
