@@ -49,25 +49,76 @@ const Home = () => {
     };
 
     const handleRegister = (payload) => {
-        setUser(payload);
-        localStorage.setItem('shippingUser', JSON.stringify(payload));
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        };
+        fetch('/api/users/register', requestOptions)//this route matches the backend route
+            .then(response => {
+                if (response.status === 200) {
+                    return response.json();
+                } else {
+                    alert('Something went wrong!!!!!');
+                }
+            })
+        //send payload to server and wait for response and then set user
+        // setUser(payload);
+        //store response in local storage
+        // localStorage.setItem('shippingUser', JSON.stringify(user));
         setOpenRegister(false);
         setOpenLogin(true);
     };
 
     const handleLogin = (payload) => {
-        if (user.email === payload.email && user.password === payload.password) {
-            setOpenModal(false);
-            setMoveToCheckout(true);
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        };
+        fetch('/api/users/login', requestOptions)//this route matches the backend route
+            .then(response => {
+                if (response.status === 200) {
+                    return response.json();
+                } else {
+                    alert('Invalid Credentials!!!!!');
+                }
+            })
+            .then(data => setUser(data));
+        //send payload to server and wait for response and then set user
+        //store response in local storage
+        localStorage.setItem('shippingUser', JSON.stringify(user));
+        setOpenModal(false);
+        setMoveToCheckout(true);
+        moveToCheckoutSmooth();
+        // if (user.email === payload.email && user.password === payload.password) {
+        //     setOpenModal(false);
+        //     setMoveToCheckout(true);
 
-            // scroll to checkout
-            moveToCheckoutSmooth();
-        } else {
-            alert('Invalid Credentials!!!!!');
-        }
+        //     // scroll to checkout
+        //     moveToCheckoutSmooth();
+        // } else {
+        //     alert('Invalid Credentials!!!!!');
+        // }
     };
 
-    const handleCheckout = (payload) => { };
+    const handleCheckout = (payload) => {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        };
+        fetch('/api/cart/checkout', requestOptions)//this route matches the backend route
+            .then(response => {
+                if (response.status === 200) {
+                    return response.json();
+                } else {
+                    alert('Something went wrong!!!!!');
+                }
+            })
+        //what to do with cart?
+        // .then(data => setUser(data));
+    };
 
     useEffect(() => {
         const shippingUser = JSON.parse(localStorage.getItem('shippingUser'));
