@@ -9,7 +9,7 @@ const user = require('./models/User')
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection')
 
-const PORT = process.env.port || 3000;
+const PORT = process.env.port || 3001;
 const app = express();
 const server = new ApolloServer({
     typeDefs,
@@ -49,13 +49,6 @@ const startApolloServer = async (typeDefs, resolvers) => {
         })
     })
 };
-
-// Set up local port
-db.once('open', () => {
-    app.listen(PORT, () => {
-        console.log(`API server running on port ${PORT}!`);
-    });
-});
 
 // Call the async function to start the server
 startApolloServer(typeDefs, resolvers);
