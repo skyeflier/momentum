@@ -50,13 +50,6 @@ const startApolloServer = async (typeDefs, resolvers) => {
     })
 };
 
-// Set up local port
-db.once('open', () => {
-    app.listen(PORT, () => {
-        console.log(`API server running on port ${PORT}!`);
-    });
-});
-
 // Call the async function to start the server
 startApolloServer(typeDefs, resolvers);
 
