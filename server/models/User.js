@@ -1,13 +1,12 @@
-const { Schema, model } = require('mongoose');
-const { findOrCreate } = require('mongoose-findorcreate');
-var jwt = require('jsonwebtoken');
-require('dotenv').config()
+const { Schema, model } = require("mongoose");
+const { findOrCreate } = require("mongoose-findorcreate");
+var jwt = require("jsonwebtoken");
+require("dotenv").config();
 
-const mongoose = require('mongoose');
 
 // const { Schema } = mongoose;
-const bcrypt = require('bcrypt');
-const Order = require('./Order');
+const bcrypt = require("bcrypt");
+const Order = require("./Order");
 
 const userSchema = new Schema(
     {
@@ -24,7 +23,7 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            match: [/.+@.+\..+/, 'Must match an email address!'],
+            match: [/.+@.+\..+/, "Must match an email address!"],
         },
         password: {
             type: String,
@@ -38,8 +37,8 @@ const userSchema = new Schema(
 userSchema.plugin(findOrCreate);
 
 // set up pre-save middleware to create password
-userSchema.pre('save', async function (next) {
-    if (this.isNew || this.isModified('password')) {
+userSchema.pre("save", async function (next) {
+    if (this.isNew || this.isModified("password")) {
         const saltRounds = 10;
         this.password = await bcrypt.hash(this.password, saltRounds);
     }
@@ -59,12 +58,12 @@ userSchema.methods.createToken = function () {
         },
         `${process.env.JWT_SECRET}`, // Uses the secret stored in the .env file, or server environment variables
         {
-            expiresIn: '24h'
+            expiresIn: "24h"
         }
-    )
-    return accessToken
-}
+    );
+    return accessToken;
+};
 
-const User = model('User', userSchema);
+const User = model("User", userSchema);
 
 module.exports = User;
