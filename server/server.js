@@ -4,10 +4,10 @@ const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 
 // Require model 
-const user = require('./models/User')
+const user = require('./models/User');
 
 const { typeDefs, resolvers } = require('./schemas');
-const db = require('./config/connection')
+const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
