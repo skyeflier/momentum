@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_ORDER } from '../../utils/mutations';
 
+import { ADD_USER } from '../../utils/mutations';
 import { scroller } from 'react-scroll';
 import TopBar from '../TopBar/Index';
 import TitleBox from '../TitleBox/Index';
@@ -20,6 +23,8 @@ const Home = () => {
     const [user, setUser] = useState(null);
     const [moveToCheckout, setMoveToCheckout] = useState(false);
 
+    const [addUser] = useMutation(ADD_USER);
+    const [addOrder] = useMutation(ADD_ORDER);
     const handleLoginClick = () => {
         setOpenModal(true);
         setOpenLogin(true);
