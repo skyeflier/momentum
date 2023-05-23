@@ -5,7 +5,7 @@ const { authMiddleware } = require('./utils/auth');
 // const { userRouter } = require('./routes/userRouter');
 
 // Require model 
-const user = require('./models/User');
+// const user = require('./models/User');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
