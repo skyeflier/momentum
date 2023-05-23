@@ -2,7 +2,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
-const { userRouter } = require('./routes/userRouter');
+// const { userRouter } = require('./routes/userRouter');
 
 // Require model 
 const user = require('./models/User');

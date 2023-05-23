@@ -3,7 +3,7 @@ import './App.css';
 
 import Home from './components/pages/Home.js';
 import ApolloClient from 'apollo-boost';
-import { Routes, Route } from 'react-router-dom';
+// import { Routes, Route } from 'react-router-dom';
 
 const client = new ApolloClient({
   uri: '/graphql',
