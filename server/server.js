@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-app.use('/api/users', userRouter);
+// app.use('/api/users', userRouter);
 
 
 app.get('/', (req, res) => {

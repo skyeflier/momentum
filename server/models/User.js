@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const { findOrCreate } = require("mongoose-findorcreate");
+// const { findOrCreate } = require("mongoose-findorcreate");
 var jwt = require("jsonwebtoken");
 require("dotenv").config();
 
@@ -34,7 +34,7 @@ const userSchema = new Schema(
     }
 );
 
-userSchema.plugin(findOrCreate);
+// userSchema.plugin(findOrCreate);
 
 // set up pre-save middleware to create password
 userSchema.pre("save", async function (next) {
