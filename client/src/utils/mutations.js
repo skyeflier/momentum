@@ -75,7 +75,3 @@ mutation updateSubscription($_id: ID!, $quantity: Int!) {
 }
 `;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> f9601809ab5c54c3c6c644eb346f39ed4d95aa35
