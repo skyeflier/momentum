@@ -1,7 +1,11 @@
 {
   "name": "momentum",
   "version": "1.0.0",
-  "description": "",
+  "engines": {
+    "node": "18.16.0",
+    "npm": "9.5.1"
+  },
+  "description": "A subscription health service for moms",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
