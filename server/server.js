@@ -10,7 +10,7 @@ const user = require('./models/User')
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection')
 
-const PORT = process.env.port || 3001;
+const PORT = process.env.PORT || 3000;
 const app = express();
 const server = new ApolloServer({
     typeDefs,
@@ -56,56 +56,3 @@ const startApolloServer = async (typeDefs, resolvers) => {
 
 // Call the async function to start the server
 startApolloServer(typeDefs, resolvers);
-
-/////////////////////////////////////////////////////
-
-
-// // Creates a new user
-// app.post('/new-user/:user', (req, res) => {
-//     const newUser = new user({ name: req.params.user });
-//     newUser.save();
-//     if (newUser) {
-//         res.status(201).json(newUser);
-//     } else {
-//         console.log('Uh Oh, something went wrong');
-//         res.status(500).json({ error: 'Something went wrong' });
-//     }
-// });
-
-// // Finds all users
-// app.get('/all-users', async (req, res) => {
-//     try {
-//         // Using model in route to find all documents that are instances of that model
-//         const result = await user.find({});
-//         res.status(200).json(result);
-//     } catch (err) {
-//         console.log('Uh Oh, something went wrong');
-//         res.status(500).json({ error: 'Something went wrong' });
-//     }
-// });
-
-// // Finds the first matching document
-// app.get('/find-user', async (req, res) => {
-//     try {
-//         // Using model in route to find all documents that are instances of that model
-//         const result = await user.findOne({ name: 'Wine' });
-//         res.status(200).json(result);
-//     } catch (err) {
-//         console.log('Uh Oh, something went wrong');
-//         res.status(500).json({ error: 'Something went wrong' });
-//     }
-// });
-
-// // Finds first document matching parameter and deletes
-// // For demo, use 'Wine' as URL param
-// app.delete('/find-one-delete/:userName', async (req, res) => {
-//     try {
-//         const result = await user.findOneAndDelete({ name: req.params.user });
-//         res.status(200).json(result);
-//         console.log(`Deleted: ${result}`);
-//     } catch (err) {
-//         console.log('Uh Oh, something went wrong');
-//         res.status(500).json({ error: 'Something went wrong' });
-//     }
-// });
-
