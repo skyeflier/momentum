@@ -26,11 +26,11 @@ const Register = (props) => {
             const mutationResponse = await addUser({
                 variables: payload,
             });
-            const token = mutationResponse.data.addUser.token;
-            const user = mutationResponse.data.addUser.user;
+            // const token = mutationResponse.data.addUser.token;
+            // const user = mutationResponse.data.addUser.user;
 
-            Auth.login(token);
-            props.onRegister(user)
+            // Auth.login(token);
+            props.onRegister()
         } catch (e) {
             console.log(e);
         }

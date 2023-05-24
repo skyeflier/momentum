@@ -29,8 +29,7 @@ query getSubscription($_id: ID!) {
 export const GET_USER = gql`
 query getUser {
     user {
-        firstName
-        lastName
+        name
         email
         orders {
             _id
