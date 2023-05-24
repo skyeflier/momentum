@@ -17,7 +17,7 @@ Table of Contents
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Future Deployment](#future)
+- [Future Deployment](#future-deployment)
 
 ## Installation
 To install and run MOMentum locally, follow these steps:
@@ -40,9 +40,9 @@ MOMentum Screenshot
 ## Credits
 MOMentum was created by the following collaborators:
 
-Jemilah: [Jemilah's GitHub](https://github.com/2x997JL)
+[Jemilah's GitHub](https://github.com/2x997JL)
 
-Bailey: [Bailey's GitHub](https://github.com/skyeflier)
+[Bailey's GitHub](https://github.com/skyeflier)
 
 We would like to give credit to the creators of the third-party assets used in MOMentum. Their contributions greatly enhanced the quality and diversity of the subscription box contents.
 
