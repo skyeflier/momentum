@@ -3,6 +3,7 @@ import './Login.css';
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
 import { LOGIN_USER } from '../../utils/mutations';
+// import { User } from '../../../../server/models';
 
 
 const Login = (props) => {
@@ -24,6 +25,8 @@ const Login = (props) => {
             });
             const token = mutationResponse.data.login.token;
             Auth.login(token);
+            const user = mutationResponse.data.login.user;
+            props.onLogin(user);
         } catch (e) {
             console.log(e);
         }

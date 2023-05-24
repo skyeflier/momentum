@@ -52,8 +52,8 @@ const Home = () => {
         }
     };
 
-    const handleRegister = (user) => {
-        setUser(user)
+    const handleRegister = () => {
+        // setUser(user)
 
         // const requestOptions = {
         //     method: 'POST',
