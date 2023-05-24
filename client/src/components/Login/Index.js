@@ -1,17 +1,33 @@
 import React, { useRef } from 'react';
 import './Login.css';
+import { useMutation } from '@apollo/client';
+import Auth from '../../utils/auth';
+import { LOGIN_USER } from '../../utils/mutations';
+
 
 const Login = (props) => {
+    const [login, { error }] = useMutation(LOGIN_USER);
     const emailRef = useRef();
     const passwordRef = useRef();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = {
             email: emailRef.current.value,
             password: passwordRef.current.value,
         };
-        props.onLogin(payload);
+
+        // e.preventDefault();
+        try {
+            const mutationResponse = await login({
+                variables: payload,
+            });
+            const token = mutationResponse.data.login.token;
+            Auth.login(token);
+        } catch (e) {
+            console.log(e);
+        }
+        // props.onLogin(payload);
     };
 
     return (

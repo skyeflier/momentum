@@ -6,10 +6,10 @@ const Checkout = ({ onCheckout }) => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        const shippingUser = JSON.parse(localStorage.getItem('shippingUser'));
+        // const shippingUser = JSON.parse(localStorage.getItem('shippingUser'));
 
-        console.log(shippingUser);
-        setUser(shippingUser);
+        // console.log(shippingUser);
+        // setUser(shippingUser);
     }, []);
 
     const handleCheckout = (payload) => {

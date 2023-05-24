@@ -52,20 +52,22 @@ const Home = () => {
         }
     };
 
-    const handleRegister = (payload) => {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        };
-        fetch('/api/users/register', requestOptions)//this route matches the backend route
-            .then(response => {
-                if (response.status === 200) {
-                    return response.json();
-                } else {
-                    alert('Something went wrong!!!!!');
-                }
-            })
+    const handleRegister = (user) => {
+        setUser(user)
+
+        // const requestOptions = {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify(payload)
+        // };
+        // fetch('/api/users/register', requestOptions)//this route matches the backend route
+        //     .then(response => {
+        //         if (response.status === 200) {
+        //             return response.json();
+        //         } else {
+        //             alert('Something went wrong!!!!!');
+        //         }
+        //     })
         //send payload to server and wait for response and then set user
         // setUser(payload);
         //store response in local storage
@@ -74,24 +76,25 @@ const Home = () => {
         setOpenLogin(true);
     };
 
-    const handleLogin = (payload) => {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        };
-        fetch('/api/users/login', requestOptions)//this route matches the backend route
-            .then(response => {
-                if (response.status === 200) {
-                    return response.json();
-                } else {
-                    alert('Invalid Credentials!!!!!');
-                }
-            })
-            .then(data => setUser(data));
-        //send payload to server and wait for response and then set user
-        //store response in local storage
-        localStorage.setItem('shippingUser', JSON.stringify(user));
+    const handleLogin = (user) => {
+        setUser(user)
+        // const requestOptions = {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify(payload)
+        // };
+        // fetch('/api/users/login', requestOptions)//this route matches the backend route
+        //     .then(response => {
+        //         if (response.status === 200) {
+        //             return response.json();
+        //         } else {
+        //             alert('Invalid Credentials!!!!!');
+        //         }
+        //     })
+        //     .then(data => setUser(data));
+        // //send payload to server and wait for response and then set user
+        // //store response in local storage
+        // localStorage.setItem('shippingUser', JSON.stringify(user));
         setOpenModal(false);
         setMoveToCheckout(true);
         moveToCheckoutSmooth();
@@ -120,14 +123,15 @@ const Home = () => {
                     alert('Something went wrong!!!!!');
                 }
             })
+
         //what to do with cart?
         // .then(data => setUser(data));
     };
 
     useEffect(() => {
-        const shippingUser = JSON.parse(localStorage.getItem('shippingUser'));
+        // const shippingUser = JSON.parse(localStorage.getItem('shippingUser'));
 
-        setUser(shippingUser);
+        setUser('');
     }, []);
     return (
         <div className='home'>

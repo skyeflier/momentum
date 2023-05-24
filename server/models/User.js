@@ -10,12 +10,7 @@ const Order = require("./Order");
 
 const userSchema = new Schema(
     {
-        firstName: {
-            type: String,
-            required: true,
-            max_length: 50,
-        },
-        lastName: {
+        name: {
             type: String,
             required: true,
         },

@@ -1,21 +1,39 @@
 import React, { useRef } from 'react';
+import { useMutation } from '@apollo/client';
+import Auth from '../../utils/auth';
 import './Register.css';
+import { ADD_USER } from '../../utils/mutations';
+
 const Register = (props) => {
+
+    const [addUser, { error }] = useMutation(ADD_USER);
     const fullNameRef = useRef();
     // const phoneRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const payload = {
-            fullName: fullNameRef.current.value,
+            name: fullNameRef.current.value,
             // phone: phoneRef.current.value,
             email: emailRef.current.value,
             password: passwordRef.current.value,
         };
-        props.onRegister(payload);
+        // props.onRegister(payload);
+        try {
+            const mutationResponse = await addUser({
+                variables: payload,
+            });
+            const token = mutationResponse.data.addUser.token;
+            const user = mutationResponse.data.addUser.user;
+
+            Auth.login(token);
+            props.onRegister(user)
+        } catch (e) {
+            console.log(e);
+        }
     };
     return (
         <form className='register' onSubmit={handleSubmit}>
@@ -30,7 +48,7 @@ const Register = (props) => {
                         type='text'
                         placeholder='Alica'
                         className='register__full-name'
-                        id='email'
+                        id='userName'
                     />
                 </div>
 
