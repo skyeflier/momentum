@@ -43,9 +43,9 @@ type Subscription {
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addUser( name: String!, email: String!, password: String!): Auth
     addOrder(subscriptions: [ID]!): Order
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    updateUser( name: String, email: String, password: String): User
     updateSubscription(_id: ID!, quantity: Int!): Subscription
     login(email: String!, password: String!): Auth
   }

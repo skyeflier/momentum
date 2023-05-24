@@ -43,8 +43,7 @@ export const UPDATE_USER = gql`
 mutation updateUser($name: String, $email: String, $password: String) {
     updateUser(name: $name, email: $email, password: $password) {
         _id
-        firstName
-        lastName
+        name
         email
         orders {
         _id
