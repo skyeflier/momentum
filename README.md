@@ -22,7 +22,7 @@ Table of Contents
 ## Installation
 To install and run MOMentum locally, follow these steps:
 
-Clone the repository: git clone https://github.com/your-username/MOMentum.git
+Clone the repository: git clone https://github.com/skyeflier/MOMentum.git
 Navigate to the project directory: cd MOMentum
 Install dependencies: npm install
 Set up the environment variables for the server and database.
