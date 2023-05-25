@@ -4,13 +4,16 @@
 
 .how-it-works h2 {
     text-align: center;
+    font-size: 40px;
+    font-style: italic;
 }
 
 .how-it-works__body {
-    width: 650px;
-    margin: 0 auto;
+    max-width: 1250px;
+    width: 100%;
+    /* margin: 0 auto; */
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 44px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
     justify-content: space-between;
 }

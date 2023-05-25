@@ -4,9 +4,11 @@ import IconHddNetwork from './icons/IconHddNetwork';
 const Index = (props) => {
     return (
         <div className='step'>
-            <h3 className='step__title'>{props.title}</h3>
+
             <d className='step__body'>
-                <IconHddNetwork />
+
+                <img className='icon' src={props.icon} alt={props.title} />
+                <h3 className='step__title'>{props.title}</h3>
                 <p className='step__description'>{props.description}</p>
             </d>
         </div>

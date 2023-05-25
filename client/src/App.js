@@ -57,17 +57,17 @@ export default function App() {
 const ProductDisplay = () => (
   <section>
     <div className="product">
-      <img
+      {/* <img
         src="client/public/mom-working-out.png"
         alt="Icon of athletic mom with baby"
-      />
+      /> */}
       <div className="description">
         <h3>MOMentum</h3>
-        <h5>$5.00</h5>
+        <h5>$39.99</h5>
       </div>
     </div>
     <form action="/create-checkout-session" method="POST">
-      <button type="submit">Checkout</button>
+      <button className="btn-checkout" type="submit">Checkout</button>
     </form>
   </section>
 );
