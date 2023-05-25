@@ -150,7 +150,7 @@ const Home = () => {
             <Body onPaymentClick={onPaymentClick} />
             {/* {moveToCheckout && <Checkout />} */}
 
-            <Checkout onCheckout={handleCheckout} />
+            {/* <Checkout onCheckout={handleCheckout} /> */}
         </div>
     );
 };

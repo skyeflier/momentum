@@ -4,11 +4,12 @@ import * as React from "react";
 function IconHddNetwork(props) {
     return (
         <svg
-            style={{ textAlign: "center" }}
+            style={{ marginLeft: "auto", marginRight: "auto", display: "block" }}
             fill="#4b245b"
             viewBox="0 0 16 16"
-            height="1em"
-            width="1em"
+            height="100px"
+            width="100px"
+            className="icon"
             {...props}
         >
             <path d="M4.5 5a.5.5 0 100-1 .5.5 0 000 1zM3 4.5a.5.5 0 11-1 0 .5.5 0 011 0z" />

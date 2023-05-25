@@ -8,12 +8,12 @@ export default function Body(props) {
         <div className='page-body'>
             <div className='page-body__content container'>
                 <p className='page-body__description'>
-                    Join our community of dedicated moms who prioritize their well-being
-                    and fitness. Take the first step towards achieving your fitness goals
-                    today!
+                    Welcome to MOMentum, the monthly subscription box designed to support busy moms on their fitness journey.
+                    Follow the simple steps below to get started and unlock a world of wellness right at your doorstep!
                 </p>
                 <HowItWorks />
-                <PaymentPlan onPaymentClick={props.onPaymentClick} />
+                <div className='page-body_payment-plan-container'><PaymentPlan onPaymentClick={props.onPaymentClick} /></div>
+
             </div>
         </div>
     );

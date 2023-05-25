@@ -1,24 +1,38 @@
 .step {
     padding: 10px 15px;
     border-radius: 5px;
-    background-color: antiquewhite;
-    background-color: #b18ac1;
+    /* background-color: antiquewhite;
+    background-color: #b18ac1; */
     transition: all 0.4s;
     cursor: pointer;
     overflow: hidden;
 
 }
 
-.step__title {}
+.step__title {
+    margin-top: 22px;
+}
 
 .step__body {
     margin-top: 15px;
     text-align: center;
 }
 
-.step:hover {
+.icon {
+    transition: all 0.4s;
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.step:hover .icon {
 
     transform: scale(105%);
 }
 
-.step__description {}
+.step__description {
+    /* line-height: 30px; */
+    font-size: 20px;
+}
