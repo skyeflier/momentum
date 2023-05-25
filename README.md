@@ -35,8 +35,8 @@ Once you have MOMentum up and running, you can access the application through yo
 
 Here is a screenshot of the MOMentum interface:
 
-![screenshot](./client/public/images/momentum-screenshot-1)
-![screenshot](./client/public/images/momentum-screenshot-2)
+![screenshot](./client/public/images/momentum-screenshot-1.png)
+![screenshot](./client/public/images/momentum-screenshot-2.png)
 
 ## Credits
 MOMentum was created by the following collaborators:
