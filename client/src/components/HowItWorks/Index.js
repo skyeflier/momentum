@@ -28,7 +28,7 @@ const steps = [
 ];
 const Index = () => {
     return (
-        <section className='how-it-works'>
+        <section className='how-it-works container'>
             <h2>How It Works</h2>
             <div className='how-it-works__body'>
                 <Step title={steps[0].title} description={steps[0].description} icon={steps[0].icon} />

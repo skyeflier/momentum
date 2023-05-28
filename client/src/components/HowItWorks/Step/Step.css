@@ -25,6 +25,8 @@
     display: block;
     margin: 0 auto;
 
+
+
 }
 
 .step:hover .icon {
@@ -35,4 +37,32 @@
 .step__description {
     /* line-height: 30px; */
     font-size: 20px;
+}
+
+
+
+
+@media (max-width: 500px) {
+
+    .step {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .icon {
+
+        width: 130px;
+        height: 130px;
+
+    }
+
+
+    .step__title {
+        font-size: 20px;
+    }
+
+    step__description {
+        /* line-height: 30px; */
+        font-size: 17px
+    }
 }

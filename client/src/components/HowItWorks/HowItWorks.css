@@ -17,3 +17,20 @@
     gap: 70px;
     justify-content: space-between;
 }
+
+
+
+
+@media (max-width: 500px) {
+
+
+
+    .how-it-works h2 {
+        font-size: 24px;
+    }
+
+    .how-it-works__body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
