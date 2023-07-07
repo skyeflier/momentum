@@ -12,6 +12,14 @@ MOMentum solves the problem of time constraints and lack of access to fitness re
 ## Learning Experience
 During the development of MOMentum, we gained valuable insights into integrating various technologies and frameworks to create a seamless user experience. We learned how to leverage React for building a dynamic and responsive front-end interface. Additionally, we successfully implemented GraphQL with a Node.js and Express.js server for efficient data retrieval and management. Integrating MongoDB with the Mongoose ODM allowed us to store and manipulate data securely. We also incorporated authentication using JWT to protect sensitive user information.
 
+We used the following technologies for this project:
+- React
+- GraphQL
+- MongoDB
+- JWT
+- Stripe
+- Heroku
+
 Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -49,9 +57,9 @@ We would like to give credit to the creators of the third-party assets used in M
 
 Special thanks to the following tutorials and resources that guided us throughout the development process:
 
-React Documentation
-GraphQL Tutorial
-MongoDB Documentation
+React Documentation,
+GraphQL Tutorial,
+MongoDB Documentation,
 JWT Authentication in Node.js
 
 ## License
